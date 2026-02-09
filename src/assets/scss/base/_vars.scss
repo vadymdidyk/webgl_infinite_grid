@@ -1,0 +1,52 @@
+// Gaps
+
+$gap-section: 120px 0;
+$gap-section-res: 60px 0;
+
+// Colors
+
+$colors: (
+  text: #fff,
+  primary: #4c2670
+);
+
+@function color($key: 'primary') {
+  @return map-get($colors, $key);
+}
+
+// Fonts
+$font-marc: 'Marcellus', serif;
+
+// Easings
+
+$easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+$easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+// Z-Indices
+
+
+// Viewport width mixin
+
+$vw-viewport: 750;
+
+@function vw($size) {
+  $vw-context: $vw-viewport * 0.01 * 1px;
+  @return $size / $vw-context * 1vw;
+}
+
+$vw-viewport-pc: 2280;
+
+@function vw-pc($size) {
+  $vw-context: $vw-viewport-pc * 0.01 * 1px;
+  @return $size / $vw-context * 1vw;
+}
+
+// Breakpoint mixins
+
+@mixin pc {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+$z-overlay: 5;
